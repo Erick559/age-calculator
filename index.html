@@ -12,15 +12,15 @@
         <form action="/">
             <div class="field-column">
                 <label for="day">DAY</label>
-                <input type="text" name="day" id="day" required placeholder="DD">
+                <input type="text" name="day" id="day" required placeholder="DD" pattern="[0-9]+">
             </div>
             <div class="field-column">
                 <label for="month">MONTH</label>
-                <input type="text" name="month" id="month" required placeholder="MM">
+                <input type="text" name="month" id="month" required placeholder="MM" pattern="[0-9]+">
             </div>
             <div class="field-column">
                 <label for="year">YEAR</label>
-                <input type="text" name="year" id="year" required placeholder="YYYY">
+                <input type="text" name="year" id="year" required placeholder="YYYY" pattern="[0-9]+">
             </div>
             <button><img src="/assets/images/icon-arrow.svg" alt="arrow-icon"></button>
         </form>
