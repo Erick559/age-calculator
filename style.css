@@ -74,8 +74,8 @@ button{
     height: 65px;
     border-radius: 50%;
     background: hsl(259, 100%, 65%);
-    top:31%;
-    left:40%;
+    top:32%;
+    left:42%;
     border: none;
     padding-top: 5px;
     cursor: pointer;
@@ -140,7 +140,7 @@ input,
 
     button{
         left:85%;
-        top:33%;
+        top:31%;
     }
 
     .result-container{
