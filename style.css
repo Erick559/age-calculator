@@ -21,7 +21,7 @@ body{
     background: hsl(0, 0%, 100%);
     width: 380px;
     padding:10px;
-    border-radius: 20px 20px 40px 20px;
+    border-radius: 20px 20px 25% 20px;
 }
 
 form{
@@ -40,6 +40,7 @@ input{
     color:hsl(0, 0%, 8%);
     font-weight:800;
     font-size: 20px;
+
 }
 
 #day,
@@ -65,7 +66,7 @@ button{
     height: 65px;
     border-radius: 50%;
     background: hsl(259, 100%, 65%);
-    top:57%;
+    top:31%;
     left:40%;
     border: none;
     padding-top: 5px;
@@ -74,3 +75,20 @@ button{
 img{
     height:27px;
 }
+
+.result-container{
+    padding:50px 20px 30px 20px;
+}
+
+.result{
+    font-size:50px;
+    font-style: italic;
+    font-weight: 900;
+    color:hsl(259, 100%, 65%);
+}
+
+input,
+.result span{
+    color:hsl(0, 0%, 8%);
+}
+
