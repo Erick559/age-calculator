@@ -92,6 +92,10 @@ input,
 }
 
 @media screen and (max-width:400px) {
+    body{
+        padding:10px;
+    }
+
     .container {
         padding:5px;
     }
