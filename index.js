@@ -1,4 +1,5 @@
 const submitButton = document.querySelector('.submit');
+const fieldColumn = document.querySelector('.field-column');
 
 submitButton.addEventListener('click', () => {
     const day = document.querySelector('#day').value;
