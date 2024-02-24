@@ -8,6 +8,28 @@
     <title>Age-Calculator</title>
 </head>
 <body>
-    
+    <div class="container">
+        <form action="/">
+            <div class="field-column">
+                <label for="day">DAY</label>
+                <input type="text" name="day" id="day" required placeholder="DD">
+            </div>
+            <div class="field-column">
+                <label for="month">MONTH</label>
+                <input type="text" name="month" id="month" required placeholder="MM">
+            </div>
+            <div class="field-column">
+                <label for="year">YEAR</label>
+                <input type="text" name="year" id="year" required placeholder="YYYY">
+            </div>
+            <button><img src="/assets/images/icon-arrow.svg" alt="arrow-icon"></button>
+        </form>
+
+        <div class="result-container">
+            <p class="result years">_ _ <span class="time">years</span></p>
+            <p class="result months">_ _ <span class="time">months</span></p>
+            <p class="result days">_ _ <span class="time">days</span></p>
+        </div>
+    </div>
 </body>
 </html>
