@@ -29,7 +29,8 @@ form{
     padding:40px 0 60px 0;
     border-bottom: solid 1px hsl(0, 0%, 86%);
     width: 90%;
-    margin: 0 auto;
+    margin: 0 auto; 
+    gap:10px;
 }
 
 input{
@@ -45,12 +46,7 @@ input{
 
 input:not(:placeholder-shown):invalid{
     border:1px solid hsl(0, 100%, 67%);
-}
-
-#day,
-#month{
-    margin-right: 10px;
-}
+}z
 
 input::placeholder{
     color:hsl(0, 2%, 62%);
@@ -110,6 +106,23 @@ span{
     color:hsl(0, 0%, 8%);
 }
 
+.year-error,
+.month-error,
+.day-error{
+    color:hsl(0, 100%, 67%);
+    font-size:10px;
+    text-align: right;
+    font-style: italic;
+}
+
+.error{
+    border:1px solid hsl(0, 100%, 67%);
+}
+
+.success{
+    border:1px solid rgb(154, 241, 154);
+}
+
 @media screen and (max-width:400px) {
     body{
         padding:10px;
@@ -130,11 +143,14 @@ span{
         padding: 20px;
     }
 
+    form{
+        gap:25px;
+    }
+
     .field-column label,
     .field-column input
     {
         display: block;
-        margin-left: 15px;
     }
 
     input{
