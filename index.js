@@ -134,7 +134,7 @@ function emptyFormValidation(){
     else{
         if(monthError){
             monthError.textContent = '';
-            yearInput.classList.remove('error');
+            monthInput.classList.remove('error');
         }
         monthInput.classList.add('success');
     }
