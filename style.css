@@ -95,6 +95,7 @@ img{
 
 .result-row{
     display: flex;
+    gap:5px;
 }
 
 .result,span{
