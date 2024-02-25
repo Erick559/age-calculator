@@ -41,6 +41,8 @@ submitButton.addEventListener('click', () => {
         calcMonths =0;
         calcDays += new Date(currentYear,currentMonth - 1,0).getDate();
     }
+
+    appendAge(calcYears,calcMonths,calcDays);
     console.log(calcYears,calcMonths,calcDays);
 })
 
@@ -72,5 +74,7 @@ let dayDiff= (currentDay,day) => {
 }
 
 function appendAge(calcYears,calcMonths,calcDays) {
-
+    resultYear.textContent = calcYears;
+    resultMonth.textContent = calcMonths;
+    resultDay.textContent = calcDays;
 }
