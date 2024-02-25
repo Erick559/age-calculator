@@ -1,5 +1,13 @@
 const submitButton = document.querySelector('.submit');
-const fieldColumn = document.querySelector('.field-column');
+const fieldColumnDay = document.querySelector('.day')
+const fieldColumnMonth = document.querySelector('.month')
+const fieldColumnYear = document.querySelector('.year')
+
+const resultYear = document.querySelector('.years');
+const resultMonth = document.querySelector('.months');
+const resultDay = document.querySelector('.days');
+
+
 
 submitButton.addEventListener('click', () => {
     const day = document.querySelector('#day').value;
