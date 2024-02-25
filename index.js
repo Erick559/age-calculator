@@ -78,3 +78,23 @@ function appendAge(calcYears,calcMonths,calcDays) {
     resultMonth.textContent = calcMonths;
     resultDay.textContent = calcDays;
 }
+
+function yearFormValidation(calcYears,year){
+    let error = document.querySelector('.year-error')
+
+    if(!error){
+        error = document.createElement('p');
+        error.classList.add('year-error');
+
+        if(calcYears < 0){
+            resultYear.textContent = '_ _';
+            resultDay.textContent = '_ _'
+            resultMonth.textContent = '_ _'
+            error.textContent = 'Invalid year';
+        }
+        else if(year === ''){
+            error.textContent = 'field is required';
+        }
+        fieldColumnYear.appendChild(error);
+    }
+}
