@@ -2,6 +2,10 @@ const submitButton = document.querySelector('.submit');
 const fieldColumnDay = document.querySelector('.day')
 const fieldColumnMonth = document.querySelector('.month')
 const fieldColumnYear = document.querySelector('.year')
+let yearError = document.querySelector('.year-error')
+let monthError = document.querySelector('.month-error')
+let dayError = document.querySelector('.day-error')
+
 
 const resultYear = document.querySelector('.years');
 const resultMonth = document.querySelector('.months');
@@ -42,8 +46,8 @@ submitButton.addEventListener('click', () => {
         calcDays += new Date(currentYear,currentMonth - 1,0).getDate();
     }
 
-    appendAge(calcYears,calcMonths,calcDays);
-    console.log(calcYears,calcMonths,calcDays);
+    emptyFormValidation(calcYears,year);
+    appendAge(calcYears,calcMonths,calcDays,year,month,day);
 })
 
 let ageInYears = (currentYear,year) => {
@@ -73,28 +77,86 @@ let dayDiff= (currentDay,day) => {
     } 
 }
 
-function appendAge(calcYears,calcMonths,calcDays) {
-    resultYear.textContent = calcYears;
-    resultMonth.textContent = calcMonths;
-    resultDay.textContent = calcDays;
+function appendAge(calcYears,calcMonths,calcDays,year,month,day) {
+    if(yearError.textContent !== '' || monthError.textContent !== '' || dayError.textContent !== ''){
+        resultYear.textContent ='_ _'
+        resultMonth.textContent = '_ _'
+        resultDay.textContent ='_ _'
+    }
+    else{
+        resultYear.textContent = calcYears;
+        resultMonth.textContent = calcMonths;
+        resultDay.textContent = calcDays;
+    }
+        
+    
 }
 
-function yearFormValidation(calcYears,year){
-    let error = document.querySelector('.year-error')
-
-    if(!error){
-        error = document.createElement('p');
-        error.classList.add('year-error');
-
-        if(calcYears < 0){
-            resultYear.textContent = '_ _';
-            resultDay.textContent = '_ _'
-            resultMonth.textContent = '_ _'
-            error.textContent = 'Invalid year';
+function emptyFormValidation(){
+    let yearInput = document.querySelector('#year')
+    let monthInput = document.querySelector('#month')
+    let dayInput = document.querySelector('#day')
+    
+    if(yearInput.value === ''){
+        if(!yearError){
+            yearError = document.createElement('p')
+            yearError.textContent = 'field is required';
+            yearError.classList.add('year-error');
         }
-        else if(year === ''){
-            error.textContent = 'field is required';
+        else{
+            yearError.textContent = 'field is required';
         }
-        fieldColumnYear.appendChild(error);
+        fieldColumnYear.appendChild(yearError);
+        yearInput.classList.add('error');
+        yearInput.classList.remove('success');
+    }
+    else{
+        if(yearError){
+            yearError.textContent = '';
+            yearInput.classList.remove('error');
+        }
+        yearInput.classList.add('success');
+    }
+
+    if(monthInput.value === ''){
+        if(!monthError){
+            monthError = document.createElement('p')
+            monthError.textContent = 'field is required';
+            monthError.classList.add('month-error');
+        }
+        else{
+            monthError.textContent = 'field is required';
+        }
+        fieldColumnMonth.appendChild(monthError);
+        monthInput.classList.add('error');
+        monthInput.classList.remove('success');
+    }
+    else{
+        if(monthError){
+            monthError.textContent = '';
+            yearInput.classList.remove('error');
+        }
+        monthInput.classList.add('success');
+    }
+
+    if(dayInput.value === ''){
+        if(!dayError){
+            dayError = document.createElement('p')
+            dayError.textContent = 'field is required';
+            dayError.classList.add('day-error');
+        }
+        else{
+            dayError.textContent = 'field is required';
+        }
+        fieldColumnDay.appendChild(dayError);
+        dayInput.classList.add('error');
+        dayInput.classList.remove('success');
+    }
+    else{
+        if(dayError){
+            dayError.textContent = '';
+            yearInput.classList.remove('error');
+        }
+        dayInput.classList.add('success');
     }
 }
